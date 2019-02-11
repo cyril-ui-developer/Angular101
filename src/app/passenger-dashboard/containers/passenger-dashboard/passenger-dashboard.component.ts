@@ -8,19 +8,13 @@ import { Passenger } from '../../models/passenger';
   styleUrls: ['./passenger-dashboard.component.scss'],
   template: `
     <section>
-    <header>
-    <h2>RailLine Passengers</h2>
-    </header>
-    <ul>
-     <li *ngFor="let passenger of passengers; let i = index;">
-     <span class="status"
-     [ngClass]='{"checked-in": passenger.checkedIn }'></span>
-      {{ i }} :
-      {{ passenger.name }}
-      <div class="date">Checked In Date : {{ passenger.checkedInDate ? (passenger.checkedInDate | date:"fullDate" | uppercase ) : "Not checked in" }}</div>
-      <div class="children">No of Children: {{ passenger.children?.length > 0 ?  passenger.children?.length : 0 }} </div>
-      </li>
-    </ul>
+    <passenger-count [passengerList]="passengers"></passenger-count>
+    <passenger-detail 
+     *ngFor="let passenger of passengers;"
+     [detail]="passenger">
+     </passenger-detail>
+  
+   
     </section>
     `
 })
