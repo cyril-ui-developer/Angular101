@@ -1,5 +1,12 @@
+
+interface Child{
+    name:string,
+    age:number
+}
 export interface Passenger {
     id:number,
     name:string,
-    checkIn:boolean
+    checkedIn:boolean,
+    checkedInDate?: number,
+    children:Child[] | null
 }
