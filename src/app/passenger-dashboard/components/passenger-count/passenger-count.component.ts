@@ -6,7 +6,7 @@ import { Passenger } from '../../models/passenger';
     selector: 'passenger-count',
     template: `
     <header>
-    <h2>RailLine Passengers</h2>
+    <h3>RailLine Passengers</h3>
     </header>
     <div>Total checked-in: {{ checkedInCount() }} / {{ passengerList.length }} </div>
     `
