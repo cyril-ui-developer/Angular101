@@ -9,10 +9,10 @@
     },
     {
       "id": 222667,
-      "name": "Kate",
-      "checkedIn": false,
-      "checkInDate": 1549912444287,
-      "baggage": "none"
+      "name": "Pauly",
+      "checkedIn": true,
+      "baggage": "hand-hold",
+      "checkInDate": 1550139330960
     },
     {
       "id": 212343,

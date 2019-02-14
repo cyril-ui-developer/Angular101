@@ -1,27 +1,41 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Passenger } from '../../models/passenger';
 import { Baggage } from '../../models/baggage';
+
 
 @Component({
     selector: 'passenger-form',
     template: `
     <section>
-    <form #form="ngForm" novalidate>
+    <form (ngSubmit)="handleSubmit(form.value, form.valid)" #form="ngForm" novalidate>
       {{ detail | json }}
+      <div>
+      Passenger ID:
+      <input
+        type="number"
+        name="id"
+        [ngModel]="detail?.id"
+        #id="ngModel"
+        required>
+        <div *ngIf="id.errors?.required && id.dirty" class="error">
+        Passenger id is required
+        </div>
+    </div>
+  
       <div>
         Passenger name:
         <input
           type="text"
           name="name"
-          [ngModel]="detail?.name">
-      </div>
-      <div>
-        Passenger ID:
-        <input
-          type="number"
-          name="id"
-          [ngModel]="detail?.id">
-      </div>
+          [ngModel]="detail?.name"
+          #name="ngModel"
+          required
+          minlength = "2">
+          {{ name.errors | json}}
+         </div>
+         <div *ngIf="name.errors?.required && name.dirty" class="error">
+         Passenger name is required
+         </div>
       <div>
       <label>
         <input 
@@ -88,9 +102,10 @@ import { Baggage } from '../../models/baggage';
          {{ bag.value }}
     </option>
   </select>
-  
-  
   </div>
+  <button type="submit" [disabled]="form.invalid">
+    Update Passenger
+    </button>
       {{ form.value | json }}
     </form>
     </section>
@@ -102,6 +117,9 @@ export class PassengerFormComponent {
 
     @Input()
     detail: Passenger;
+
+    @Output()
+    update: EventEmitter<Passenger> = new EventEmitter<Passenger>();
 
     baggage: Baggage[] = [{
         key: 'none',
@@ -124,5 +142,9 @@ export class PassengerFormComponent {
             this.detail.checkInDate = Date.now();
         }
     }
-
+    handleSubmit(passenger: Passenger, isValid: boolean) {
+        if (isValid) {
+            this.update.emit(passenger);
+        }
+    }
 } 
