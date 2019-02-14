@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   selector: 'app-root',
   template: `
    <main>
-  <passenger-dashboard></passenger-dashboard>
+  <passenger-viwer></passenger-viwer>
    </main>
   `,
   styleUrls: ['./app.component.scss']

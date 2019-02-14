@@ -36,6 +36,14 @@ export class PassengerDashboardService {
         return this.http.delete<Passenger>(`${environment.baseUrl}/passengers/${passenger.id}`)
     }
 
+        /** GET Passenger from the server */
+        getPassenger(id: number): Observable<Passenger> {
+            return this.http.get<Passenger>(`${environment.baseUrl}/passengers/${id}`)
+            // .pipe(
+            //     catchError(this.handleError('getPassengers ', []))
+            //   );
+        }
+
     /**
  * Handle Http operation that failed.
  * Let the app continue.

@@ -7,6 +7,7 @@ export interface Passenger {
     id:number,
     name:string,
     checkedIn:boolean,
-    checkedInDate?: number,
-    children:Child[] | null
+    checkInDate?: number,
+    //children:Child[] | null
+    baggage: string
 }
