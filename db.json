@@ -5,14 +5,14 @@
       "name": "Min",
       "checkedIn": true,
       "checkInDate": 1549912460745,
-      "baggage": ""
+      "baggage": "none"
     },
     {
       "id": 222667,
       "name": "Kate",
       "checkedIn": false,
       "checkInDate": 1549912444287,
-      "baggage": ""
+      "baggage": "none"
     },
     {
       "id": 212343,
