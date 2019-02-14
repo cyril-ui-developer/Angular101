@@ -19,8 +19,6 @@ import { PassengerDashboardService } from '../../passenger-dashboard.service';
      (edit)="handleEdit($event)"
      (remove)="handleRemove($event)">
      </passenger-detail>
-  
-   
     </section>
     `
 })
