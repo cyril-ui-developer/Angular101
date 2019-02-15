@@ -1,23 +1,16 @@
 {
   "passengers": [
     {
-      "id": 167890,
-      "name": "Min",
-      "checkedIn": true,
-      "checkInDate": 1549912460745,
-      "baggage": "none"
-    },
-    {
       "id": 222667,
-      "name": "Pauly",
+      "name": "Paul",
       "checkedIn": true,
       "baggage": "hand-hold",
       "checkInDate": 1550139330960
     },
     {
       "id": 212343,
-      "name": "Isoken",
-      "checkedIn": true,
+      "name": "Ebi",
+      "checkedIn": false,
       "baggage": ""
     }
   ]
